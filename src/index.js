@@ -2,22 +2,29 @@
 // Tambien debemos de importar DOM
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {Greeting, UserCard} from "./greeting"
 
-// Mo necesito crear una variable
+// No necesito crear una variable
 // const rootElement = ReactDOM.createRoot(document.getElementById('root'))
 
 // Otra opcion de hacerlo
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<h1>Hola mundo </h1>);
 
-function Greeting() {
-  return <h1>Este es un H1</h1>;
-}
+//La creamos en el archivo greeting para exportarla aqui
+// function Greeting() {
+//   function add(x,y){
+//     return x + y
+//   }
+//   return <h1>{add(10,48)}</h1>
+// }
 
 root.render(
-  <div>
-    <Greeting />
-    <Greeting />
-    <Greeting />
-  </div>
+  // Para utilizar mas de 1 vez la funtion Greeting lo debemos de integrar dentro de una etiqueta HTMl 
+  <>
+  <Greeting/>
+  <Greeting/>
+  <UserCard/>
+  </>
+
 );
