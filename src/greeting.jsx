@@ -2,14 +2,12 @@
 
 //IS Modules permite importar y exportar archivos 
 
-export function Greeting() {
-    function add(x, y) {
-        return x + y
+export function Greeting({title, car ='No tengo'}) {
+    console.log(title,car)
+    return <h1>{title} dice {title}</h1>
     }
-    return <h1>{add(10, 48)}</h1>
-}
 
-
-export function UserCard(){
+export function UserCard(props){
+    console.log(props)
     return <h1>Use Card</h1>
 }
