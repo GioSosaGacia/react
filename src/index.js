@@ -9,6 +9,7 @@ import Product, { Navegador } from "./Product";
 import { Button } from "./Button";
 import { TaskCard } from "./Task";
 import { Saludar } from "./Saludar";
+import {Posts} from './Post';
 
 // No necesito crear una variable
 // const rootElement = ReactDOM.createRoot(document.getElementById('root'))
@@ -25,6 +26,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //   return <h1>{add(10,48)}</h1>
 // }
 
+
+// 1.fORMA DE MANEJAR UN EVENTO
+const handleChange = (e) =>{
+  console.log(e.target.value)
+} 
+
+
 root.render(
   // Para utilizar mas de 1 vez la funtion Greeting lo debemos de integrar dentro de una etiqueta HTMl
   <>
@@ -35,6 +43,8 @@ root.render(
 
     <TaskCard ready={true} />
     <Saludar/>
+    <input id='hola' onChange={handleChange}/>
+    <Posts/>
 
     <UserCard
       name="Luis David"
