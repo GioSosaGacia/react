@@ -8,6 +8,7 @@ import { Greeting, UserCard } from "./greeting";
 import Product, { Navegador } from "./Product";
 import { Button } from "./Button";
 import { TaskCard } from "./Task";
+import { Saludar } from "./Saludar";
 
 // No necesito crear una variable
 // const rootElement = ReactDOM.createRoot(document.getElementById('root'))
@@ -33,6 +34,7 @@ root.render(
     <Greeting title="Hola Maria" /> */}
 
     <TaskCard ready={true} />
+    <Saludar/>
 
     <UserCard
       name="Luis David"
