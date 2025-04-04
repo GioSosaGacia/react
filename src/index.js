@@ -6,6 +6,7 @@ import ReactDOM from "react-dom/client";
 import { Greeting, UserCard } from "./greeting";
 // Importacion por defecto cuando solo se quire exporar un unico elemento
 import Product, { Navegador } from "./Product";
+import { Button } from "./Button";
 
 // No necesito crear una variable
 // const rootElement = ReactDOM.createRoot(document.getElementById('root'))
@@ -25,20 +26,34 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // Para utilizar mas de 1 vez la funtion Greeting lo debemos de integrar dentro de una etiqueta HTMl
   <>
-    <Greeting title="Hola Giovanni" car="Kia" />
+    {/* <Greeting title="Hola Giovanni" car="Kia" />
     <Greeting title="Hola Angelica" car="Fiat" />
+    <Greeting title="Hola Raquel" car="Cruze" />
+    <Greeting title="Hola Maria" /> */}
+
+    <Button text= 'Click me ' name='Jow'/>
+    <Button text='Pay'name = 'Market' />
+    <Button text='Hi'/>
 
     <UserCard
       name="Luis David"
-      amout={3000}
+      amount={3000}
       married={true}
       points={[99, 33, 66, 76]}
       addres={{ street: "Teodomiro Manzano 3692", city: "Guadalaja" }}
+      greet={function () { alert('Hello') }}
+    />
+
+    <UserCard
+      name="Lu"
+      amount={4000}
+      married={false}
+      points={[99, 33, 66, 76]}
+      addres={{ street: "Av. 8 de julio 3692", city: "Guadalaja" }}
+      greet={function () { alert('Hello') }}
     />
 
     <Product />
     <Navegador />
-    <Greeting title="Hola Raquel" car="Cruze" />
-    <Greeting title="Hola Maria" />
   </>
 );
