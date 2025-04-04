@@ -7,6 +7,7 @@ import { Greeting, UserCard } from "./greeting";
 // Importacion por defecto cuando solo se quire exporar un unico elemento
 import Product, { Navegador } from "./Product";
 import { Button } from "./Button";
+import { TaskCard } from "./Task";
 
 // No necesito crear una variable
 // const rootElement = ReactDOM.createRoot(document.getElementById('root'))
@@ -31,9 +32,7 @@ root.render(
     <Greeting title="Hola Raquel" car="Cruze" />
     <Greeting title="Hola Maria" /> */}
 
-    <Button text= 'Click me ' name='Jow'/>
-    <Button text='Pay'name = 'Market' />
-    <Button text='Hi'/>
+    <TaskCard ready={true} />
 
     <UserCard
       name="Luis David"
@@ -52,6 +51,11 @@ root.render(
       addres={{ street: "Av. 8 de julio 3692", city: "Guadalaja" }}
       greet={function () { alert('Hello') }}
     />
+
+    <Button text='Click me ' name='Jow' />
+    <Button text='Pay' name='Market' />
+    <Button text='Hi' />
+
 
     <Product />
     <Navegador />

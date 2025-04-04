@@ -1,11 +1,13 @@
 import PropTypes from "prop-types"
 
 // export function Button({text, name = 'Jow'})
-export function Button({text, name}){
+export function Button({ text, name }) {
     console.log(text)
-    return <button>
-        {text} - {name}
-    </button>
+    return <div style={{ display:"flex",  justifyContent: 'center', alignItems: 'center',padding:'5px'}}>
+        <button>
+            {text} - {name}
+        </button>
+    </div>
 }
 
 // Permite definir un tipo de texto 

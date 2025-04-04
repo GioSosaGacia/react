@@ -1,0 +1,17 @@
+.card {
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 8px;  
+    width: 300px;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+
+.bg-red {
+    background: red;
+}
+
+.bg-green {
+    background: rgb(3, 124, 61);
+}
