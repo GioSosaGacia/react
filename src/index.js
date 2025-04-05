@@ -1,6 +1,6 @@
 // debemos de imporar la biblioteca de react, sirve para crear interfaces de usuario, permite crear app moviles o de escritorio
 // Tambien debemos de importar DOM
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 // exportacion nombrada, exporta multiples cosas como funciones, variables p componetes y van entre llaves para hacer el destructuring
 import { Greeting, UserCard } from "./greeting";
@@ -52,6 +52,49 @@ const users = [
 ]
 
 
+// Para modificar un estado se debe de usar un hook useState, se debe de importar, permite cambiar el estado de una variable o un parametro 
+function Counter() {
+
+  const [counter, setCounter] = useState(0)
+
+  return (
+    <div>
+      <h1>Counter: {counter}</h1>
+      <button onClick={() => {
+        setCounter(counter + 1)
+      }}>
+        Sumar
+      </button>
+      <button onClick={() => {
+        setCounter(counter - 1)
+      }}>
+        Restar
+      </button>
+      <button onClick={() => {
+        setCounter(0)
+      }}>
+        Reiniciar
+      </button>
+    </div>)
+}
+
+
+function Counter1() {
+
+  const [mensaje, setMensaje] = useState('')
+
+  return (
+    <div>
+      <input onChange={e => setMensaje(e.target.value)} />
+      <button onClick={ () => {
+        alert('El menasaje es: ' + mensaje)
+      }}>
+        Save
+      </button>
+    </div>)
+}
+
+
 root.render(
   // Para utilizar mas de 1 vez la funtion Greeting lo debemos de integrar dentro de una etiqueta HTMl
   <>
@@ -93,13 +136,18 @@ root.render(
     <Navegador />
 
 
-{/* Al tecorrer una lista con map debemos de agregar el indice que es el segundo par dentro de la función flecha, si no esta marcrá error, nota la key la debe de tener el primer elemento */}
+    {/* Al tecorrer una lista con map debemos de agregar el indice que es el segundo par dentro de la función flecha, si no esta marcrá error, nota la key la debe de tener el primer elemento */}
     {users.map((user, index) => {
       return <div key={index}>
         <h1>{user.name}</h1>
-        <img src={user.imagen}/>
+        <img src={user.imagen} />
       </div>
     })}
+
+
+    <Counter />
+    <Counter1/>
+
 
   </>
 );
