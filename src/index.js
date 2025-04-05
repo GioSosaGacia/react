@@ -9,7 +9,7 @@ import Product, { Navegador } from "./Product";
 import { Button } from "./Button";
 import { TaskCard } from "./Task";
 import { Saludar } from "./Saludar";
-import {Posts} from './Post';
+import { Posts } from './Post';
 
 // No necesito crear una variable
 // const rootElement = ReactDOM.createRoot(document.getElementById('root'))
@@ -17,6 +17,7 @@ import {Posts} from './Post';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // root.render(<h1>Hola mundo, Desde el componente de react  </h1>);
+
 
 //La creamos en el archivo greeting para exportarla aqui
 // function Greeting() {
@@ -28,9 +29,27 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 // 1.fORMA DE MANEJAR UN EVENTO
-const handleChange = (e) =>{
+const handleChange = (e) => {
   console.log(e.target.value)
-} 
+}
+
+
+
+const users = [
+  {
+    id: 1,
+    name: 'Maria Sosa',
+    imagen: 'https://robohash.org/user1'
+  }, {
+    id: 2,
+    name: 'Luis Sosa',
+    imagen: 'https://robohash.org/user2'
+  }, {
+    id: 3,
+    name: 'Giovanni Sosa',
+    imagen: 'https://robohash.org/user3'
+  }
+]
 
 
 root.render(
@@ -42,9 +61,9 @@ root.render(
     <Greeting title="Hola Maria" /> */}
 
     <TaskCard ready={true} />
-    <Saludar/>
-    <input id='hola' onChange={handleChange}/>
-    <Posts/>
+    <Saludar />
+    <input id='hola' onChange={handleChange} />
+    <Posts />
 
     <UserCard
       name="Luis David"
@@ -64,6 +83,7 @@ root.render(
       greet={function () { alert('Hello') }}
     />
 
+
     <Button text='Click me ' name='Jow' />
     <Button text='Pay' name='Market' />
     <Button text='Hi' />
@@ -71,5 +91,16 @@ root.render(
 
     <Product />
     <Navegador />
+
+
+{/* Al tecorrer una lista con map debemos de agregar el indice que es el segundo par dentro de la función flecha, si no esta marcrá error, nota la key la debe de tener el primer elemento */}
+    {users.map((user, index) => {
+      return <div key={index}>
+        <h1>{user.name}</h1>
+        <img src={user.imagen}/>
+      </div>
+    })}
+
   </>
 );
+

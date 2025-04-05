@@ -17,3 +17,19 @@ export const Posts = () =>{
         Traer datos
     </button>
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// crear una automatizacion para modificar ovl 
+// http://radial01-2.fortiddns.com/webServiceRadial/paginaRadial/paginaRadial.svc/actualizarDetallePreorden
